@@ -1,5 +1,5 @@
 <x-main>
-    <h1>Inserisci articolo</h1>
+    <h1>Inserisci libro</h1>
     @if(session()->has('success'))
         <h2 class="alert alert-success">{{session('success')}}</h2>
     @endif
