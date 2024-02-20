@@ -23,7 +23,7 @@ class StoreBookRequest extends FormRequest
     {
         return [
             'titolo'=>'required|max:20',
-            'anno'=>'required|min:4|max:4',
+            'anno'=>'required|max:4',
             'genere'=>'required|max:20'
         ];
     }
@@ -33,7 +33,6 @@ class StoreBookRequest extends FormRequest
             'anno.required'=>'Inserire anno di publicazione',
             'genere.required'=>'Inserire genere',
             'titolo.max'=>'Il titolo può essere lungo massimo 20 caratteri',
-            'anno.min'=>'Anno di publicazione non valido',
             'anno.max'=>'Anno di publicazione non valido',
             'genere.max'=>'Il genere può essere lungo massimo 20 caratteri'
         ];
