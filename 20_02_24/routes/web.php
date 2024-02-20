@@ -15,3 +15,5 @@ use App\Http\Controllers\BookController;
 */
 
 Route::get('/', [BookController::class, 'index'])->name('index');
+
+Route::resource('book', BookController::class);
