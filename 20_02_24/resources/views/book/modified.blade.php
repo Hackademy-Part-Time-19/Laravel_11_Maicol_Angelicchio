@@ -1,10 +1,11 @@
 <x-main>
-    <h1>Inserisci libro</h1>
-    @if(session()->has('success'))
-        <h2 class="alert alert-success">{{session('success')}}</h2>
+    <h1>Modifica libro</h1>
+    @if(session()->has('modified'))
+        <h2 class="alert alert-success">{{session('modified')}}</h2>
     @endif
-    <form action="{{ route('book.store')}}" method="POST" class="mt-5 mx-auto col-lg-6" enctype="multipart/form-data">
+    <form action="{{ route('book.update', compact('book'))}}" method="POST" class="mt-5 mx-auto col-lg-6" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
         <div class="mb-3">
             <label for="titolo" class="form-label">Titolo:</label>
             <input type="text" class="form-control" id="titolo" placeholder="Inserisci il titolo" name="titolo" value="{{old('titolo')}}">

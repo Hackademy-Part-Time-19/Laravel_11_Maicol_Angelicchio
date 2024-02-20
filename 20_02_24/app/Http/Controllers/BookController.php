@@ -48,7 +48,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('book.modified',compact('book'));
     }
 
     /**
@@ -56,7 +56,10 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        $book->update(['titolo'=>$request->titolo]);
+        $book->update(['anno'=>$request->anno]);
+        $book->update(['genere'=>$request->genere]);
+        return redirect()->back()->with('modified', 'libro modificato');
     }
 
     /**
@@ -64,6 +67,7 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        $book->delete();
+        return redirect()->back()->with('success', 'libro eliminato');
     }
 }
