@@ -18,9 +18,13 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{ route('book.create')}}">Inserisci</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ route('logout')}}">Logout</a>
-        </li>
+        <form action="{{ route('logout')}}" method="POST">
+        @csrf
+        <button type="submit">Logout</button>
+      </form>
+      <li class="nav-item">
+          <h2>Ciao {{auth()->user()->name}}</h2>
+      </li>
       @endauth
       </ul>
     </div>

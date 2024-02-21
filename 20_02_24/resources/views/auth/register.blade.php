@@ -1,4 +1,5 @@
 <x-main>
+    <h1>Register</h1>
     <form action="/register" method="POST" class="mt-5 mx-auto col-lg-6">
     @csrf
     <div class="mb-3">
