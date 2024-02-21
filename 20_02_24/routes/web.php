@@ -16,4 +16,6 @@ use App\Http\Controllers\BookController;
 
 Route::get('/', [BookController::class, 'index'])->name('index');
 
-Route::resource('book', BookController::class);
+Route::middleware('auth')->group(function(){
+    Route::resource('book', BookController::class)->except(['index']);
+});
